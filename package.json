@@ -1,0 +1,37 @@
+{
+  "name": "personalportfolio",
+  "version": "1.0.0",
+  "description": "Single Page Application - backend made with nodeJS and expressJS / frontend made with handlebars and a free template",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CyberGust/personalportfolio.git"
+  },
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "handlebars",
+    "portfolio",
+    "spa",
+    "singlepageapplication",
+    "webserver",
+    "web"
+  ],
+  "author": "Gustavo Ilha Morais",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/CyberGust/personalportfolio/issues"
+  },
+  "homepage": "https://github.com/CyberGust/personalportfolio#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "nodemailer": "^6.1.1"
+  }
+}

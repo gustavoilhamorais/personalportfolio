@@ -1,0 +1,57 @@
+<div style="margin-top:15px;" class="container">
+    <div class="article">
+        <div class="section">
+            <h2>Crie uma chave SSH e configure no seu GitHub!</h2>
+
+            {{!-- <img src="/images/blog-1.jpg" alt="Img"> --}}
+
+            <span>
+                Após ter instalado o <a href="https://git-scm.com/downloads">Git</a> no seu sistema operacional, abra o
+                terminal e
+                me acompanhe:
+            </span>
+        </div>
+        <br>
+        <div class="section">
+            <h4>1º Passo:</h4>
+            <span>Informe seu nome de usuário do GitHub com o comando (com áspas):</span><br>
+            <code># git config --global user.name "username"</code><br><br>
+
+            <h4>2º Passo:</h4>
+            <span>Informe o seu email de usuário do GitHub com o comando (também com àspas):</span><br>
+            <code># git config --global user.email "seuemail@exemplo.com"</code><br><br>
+
+            <h4>3º Passo:</h4>
+            <span>Agora configure sua "fingerprint", ou seja, o código SSH que vamos usar. Para isso digite:</span><br>
+            <code># ssh-keygen -t rsa -b 4096 -C "seuemail@exemplo.com"</code><br>
+            <code># eval "$(ssh-agent -s)"</code><br>
+            <code># ssh-add ~/.ssh/id_rsa</code><br><br>
+            <small>
+                Se seu sistema operacional não for baseado em Linux, ou você escolheu um diretório diferente <br>
+                do proposto por padrão no momento de gerar a fingerprint, troque "~/.ssh/id_rsa" pelo diretório que você
+                escolheu.
+            </small><br><br>
+
+            <h4>4º Passo:</h4>
+            <span>Para finalizar no terminal, monte sua "fingerprint" utilizando o arquivo "id_rsa.pub":</span><br>
+            <code># cat ~/.ssh/id_rsa.pub</code><br>
+            <span>Copie este código gerado em seu terminal. Ele deve começar com "ssh" e terminar com o email
+                configurado previamente.</span>
+            <br><br>
+
+            <h4>5º Passo:</h4>
+            <ul>
+                <li>Acesse sua conta GitHub</li>
+                <li>Clicando no seu avatar que encontra-se no canto superior direito, selecione a opção
+                    <b>"Settings"</b></li>
+                <li>Agora selecione a opção <b>"SSH and GPG keys"</b></li>
+                <li>Por fim <b>New SSH key</b></li>
+            </ul>
+            <span>Dê o "title" que preferir para sua chave. Eu sugiro o nome do sistema operacional ou da VM que esteja
+                usando.</span><br>
+            <span>Cole o código que copiou do seu terminal no passo nº4 no campo <b>"key"</b>, e clique em <b>"Add SSH
+                    key"</b></span><br>
+            <small>Certifique-se de que não colocou nenhum espaço ou parágrafo adicional no campo <b>"key"</b>.</small>
+        </div>
+    </div>
+</div>
