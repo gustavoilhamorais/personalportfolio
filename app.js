@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const hbs = require("express-handlebars");
-const serverless = require('serverless-http');
 
 // Public //
 app.use(express.static(path.join(__dirname, "public")));
@@ -19,4 +18,8 @@ const blog = require("./routes/blog");
 app.use("/", home);
 app.use("/blog", blog);
 
-module.exports.handler = serverless(app);
+// Express Server //
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server running at ${PORT}`);
+});
