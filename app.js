@@ -19,10 +19,4 @@ const blog = require("./routes/blog");
 app.use("/", home);
 app.use("/blog", blog);
 
-// Express Server //
-// const PORT = process.env.PORT || 8080;
-// app.listen(PORT, () => {
-//   console.log(`Server running at ${PORT}`);
-// });
-
 module.exports.handler = serverless(app);
